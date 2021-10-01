@@ -7,7 +7,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Vollkorn", Tahoma, Geneva, Verdana, sans-serif;
   outline: none;
   border: none;
   text-decoration: none;
@@ -32,4 +32,13 @@ header {
   justify-content: space-between;
   z-index: 1000; /*higher z-index means bring the element to the top*/
   box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 1); /*horizontal offset 0rem vertical offset 0.5rem blur radius 1rem black shadow*/
+}
+.logo {
+  display: grid;
+  text-align: center;
+  align-items: center;
+  margin: 0.5rem;
+}
+.navBar > a {
+  padding: 0 2rem 0 2rem;
 }
