@@ -7,7 +7,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Vollkorn", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  color: #3d57a7;
   outline: none;
   border: none;
   text-decoration: none;
@@ -15,9 +16,9 @@
   transition: 0.2s linear; /*transition effect is same speed from start to end*/
 }
 html {
-  font-size: 1rem; /*62.5% of 16px = 10px*/
+  font-size: 100%; /*100% font-size = 16px (the default for all browsers) = 1 rem (root element font-size)*/
   scroll-behavior: smooth; /*scroll to in-page links smoothly*/
-  scroll-padding-top: 6rem; /*16 px = 1 rem*/
+  scroll-padding-top: 6rem;
   overflow-x: hidden; /* if the div is small, hide the horizontal scroll*/
 }
 header {
@@ -26,19 +27,34 @@ header {
   left: 0;
   right: 0;
   background-color: white;
-  padding: 2rem 9%; /*top and bottom padding 2rem and left anf right padding is 9% of the containing div*/
+  padding: 0.5rem 4%; /*top and bottom padding 0.5rem and left and right padding is 9% of the containing div*/
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 1000; /*higher z-index means bring the element to the top*/
-  box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 1); /*horizontal offset 0rem vertical offset 0.5rem blur radius 1rem black shadow*/
+  box-shadow: 0rem 0.5rem 0.5rem rgba(0, 0, 0, 0.1); /*horizontal offset 0rem vertical offset 0.5rem blur radius 0.1rem black shadow*/
 }
-.logo {
-  display: grid;
-  text-align: center;
+header .logo {
+  display: flex;
   align-items: center;
+  font-size: 1.5rem;
+  font-weight: 300;
   margin: 0.5rem;
 }
-.navBar > a {
-  padding: 0 2rem 0 2rem;
+#company {
+  padding: 0.5rem;
+  color: #1a5c2e;
+}
+header .navBar > a {
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+header .navBar a:hover {
+  color: #1a5c2e;
+}
+header .icons > a {
+  padding: 1.2rem;
+}
+header .icons a:hover {
+  color: #1a5c2e;
 }
