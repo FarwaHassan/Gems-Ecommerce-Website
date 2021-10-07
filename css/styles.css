@@ -34,6 +34,18 @@ header {
   z-index: 1000; /*higher z-index means bring the element to the top*/
   box-shadow: 0rem 0.5rem 0.5rem rgba(0, 0, 0, 0.1); /*horizontal offset 0rem vertical offset 0.5rem blur radius 0.1rem black shadow*/
 }
+#hamburger {
+  display: none;
+}
+header .fa-bars {
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: 0.1rem solid rgba(26, 92, 46, 1);
+  border-radius: 0.3rem;
+  padding: 0.5rem 0.5rem;
+  color: #1a5c2e;
+  display: none;
+}
 header .logo {
   display: flex;
   align-items: center;
@@ -47,14 +59,45 @@ header .logo {
 }
 header .navBar > a {
   font-size: 1.2rem;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 header .navBar a:hover {
   color: #1a5c2e;
 }
 header .icons > a {
-  padding: 1.2rem;
+  font-size: 1.2rem;
+  margin-left: 1rem;
 }
 header .icons a:hover {
   color: #1a5c2e;
+}
+
+@media only screen and (max-width: 991px) {
+  html {
+    font-size: 80%;
+  }
+  header {
+    padding: 0.1rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  header .fa-bars {
+    display: block;
+    margin: 20px;
+  }
+  header .navBar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #b6cabd;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+  }
+  header .navBar > a {
+    display: block;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background: #ffff;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  }
 }
