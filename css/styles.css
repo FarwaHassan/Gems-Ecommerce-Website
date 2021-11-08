@@ -7,7 +7,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-family: "Myriad Pro", Tahoma, Verdana, sans-serif;
   color: #3d57a7;
   outline: none;
   border: none;
@@ -16,10 +16,19 @@
   transition: 0.2s linear; /*transition effect is same speed from start to end*/
 }
 html {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
   font-size: 100%; /*100% font-size = 16px (the default for all browsers) = 1 rem (root element font-size)*/
   scroll-behavior: smooth; /*scroll to in-page links smoothly*/
   scroll-padding-top: 6rem;
   overflow-x: hidden; /* if the div is small, hide the horizontal scroll*/
+}
+body {
+  flex-grow: 1;
+}
+section {
+  padding: 0.5rem 9%;
 }
 header {
   position: fixed;
@@ -27,18 +36,18 @@ header {
   left: 0;
   right: 0;
   background-color: white;
-  padding: 0.5rem 4%; /*top and bottom padding 0.5rem and left and right padding is 9% of the containing div*/
+  padding: 0.5rem 9%; /*top and bottom padding 0.5rem and left and right padding is 9% of the containing div*/
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 1000; /*higher z-index means bring the element to the top*/
-  box-shadow: 0rem 0.5rem 0.5rem rgba(0, 0, 0, 0.1); /*horizontal offset 0rem vertical offset 0.5rem blur radius 0.1rem black shadow*/
+  box-shadow: 0rem 0.1rem 0.3rem rgba(26, 92, 46, 1); /*horizontal offset 0rem vertical offset 0.5rem blur radius 0.1rem black shadow*/
 }
 #hamburger {
   display: none;
 }
 header .fa-bars {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   border: 0.1rem solid rgba(26, 92, 46, 1);
   border-radius: 0.3rem;
@@ -47,15 +56,10 @@ header .fa-bars {
   display: none;
 }
 header .logo {
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
   font-weight: 300;
-  margin: 0.5rem;
 }
-#company {
-  padding: 0.5rem;
-  color: #1a5c2e;
+.imgLogo {
+  height: auto;
 }
 header .navBar > a {
   font-size: 1.2rem;
@@ -73,8 +77,16 @@ header .icons a:hover {
 }
 /*Login Form styles*/
 h2 {
-  padding-bottom: 1.5rem;
-  text-align: center;
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.3rem;
 }
 .loginForm {
   width: 20rem;
@@ -113,19 +125,181 @@ h2 {
 .innerForm button:hover {
   background-color: #1a5c2e;
 }
+/*Home section*/
+.home {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background: url(/images/octoberStone.jpg) no-repeat;
+  background-size: 75%;
+  background-position: center;
+}
+.home .content {
+  max-width: 30rem;
+}
+.home .content > span {
+  font-size: 2rem;
+  color: #1a5c2e;
+}
+.home .content > p {
+  font-size: 1.1rem;
+  padding: 1rem 0;
+  line-height: 1.5;
+}
+.btn {
+  font-size: 1.3rem;
+  color: #ffffff;
+  background-color: #3d57a7;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 2rem;
+  border-radius: 5rem;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #1a5c2e;
+}
+/*About Us section*/
+.heading {
+  text-align: center;
+  padding: 1rem 0 1rem 0;
+  background: rgb(234, 240, 236);
+}
+.about .aboutUs {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+.about .aboutUs .imageGallery {
+  position: relative;
+  flex: 1 1 20rem;
+}
+.about .aboutUs .imageGallery h4 {
+  position: absolute;
+  top: 90%;
+  width: 100%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  mix-blend-mode: screen;
+}
+.about .aboutUs .imageGallery img {
+  width: 100%;
+  border: 1.5rem solid #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+.about .content > p {
+  text-transform: none;
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+.about .aboutUs .content {
+  flex: 1 1 20rem;
+}
+/*FAQ Section*/
+.faq {
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.faq p {
+  margin: 1rem;
+  text-transform: none;
+}
+.faq h5 {
+  margin: 1rem 1rem 0 1rem;
+  background: url("/images/open.png") no-repeat 1px 1px;
+  text-indent: 2rem;
+  cursor: pointer;
+}
+.faq h5.close {
+  background-image: url("/images/close.png");
+  text-indent: 2rem;
+}
+.isVisible {
+  display: block;
+}
 
+/*Footer Section*/
+footer {
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+.navFooter {
+  background-color: rgb(234, 240, 236);
+  position: relative;
+}
+.navFooterGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: auto;
+  gap: 2rem;
+  max-width: 100%;
+  padding: 2rem 9%;
+}
+.footer1 {
+  padding: 2rem 1rem;
+  text-align: left;
+  background-color: #ffffff;
+}
+.footer1 ul {
+  list-style-type: none;
+  margin: 1rem 0;
+}
+.footer1 li {
+  padding: 0.5rem;
+}
+.footer2 {
+  padding: 2rem 1rem;
+  text-align: left;
+  background-color: #ffffff;
+}
+.footer2 ul {
+  list-style-type: none;
+  margin: 1rem 0;
+}
+.footer2 li {
+  padding: 0.5rem;
+}
+.footer3 {
+  padding: 2rem 1rem;
+  text-align: left;
+  background-color: #ffffff;
+}
+.footerBar {
+  padding: 1rem 0 2rem 0;
+  text-align: center;
+  max-width: 100%;
+  box-shadow: 0rem -0.15rem 0.3rem rgba(26, 92, 46, 1); /*horizontal offset 0rem vertical offset 0.15rem blur radius 0.3rem green shadow*/
+}
+#footerBar p {
+  text-transform: none;
+}
+#footerBar img {
+  width: 12rem;
+  height: auto;
+}
 /*Media Queries*/
 @media only screen and (max-width: 991px) {
   html {
     font-size: 90%;
   }
   header {
-    padding: 0.1rem;
+    padding: 0.1rem 9%;
+  }
+  .home {
+    /*not resolved yet*/
+    background-position: right;
   }
 }
 @media only screen and (max-width: 768px) {
   html {
-    font-size: 60%;
+    font-size: 70%;
   }
   header .fa-bars {
     display: block;
@@ -136,7 +310,7 @@ h2 {
     top: 100%;
     left: 0;
     right: 0;
-    background: #b6cabd;
+    background: rgb(234, 240, 236);
     border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   }
@@ -144,8 +318,8 @@ h2 {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
   header .logo > img {
-    width: 80px;
-    height: 80px;
+    width: 4.5rem;
+    height: 4.5rem;
   }
   header .navBar > a {
     display: block;
