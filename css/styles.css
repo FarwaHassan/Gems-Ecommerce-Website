@@ -88,6 +88,9 @@ h4 {
 h5 {
   font-size: 1.3rem;
 }
+h6 {
+  font-size: 1.1rem;
+}
 .loginForm {
   width: 20rem;
   box-sizing: border-box;
@@ -236,9 +239,12 @@ footer {
 }
 .navFooterGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /*repeat 200 px-columns to auto-fit screens, then wrap to next rows. 1fr means expand column widths to have no empty space at the end of the row if a fraction of column is fitting*/
   grid-auto-rows: auto;
-  gap: 2rem;
+  gap: 1rem;
   max-width: 100%;
   padding: 2rem 9%;
 }
@@ -270,6 +276,23 @@ footer {
   padding: 2rem 1rem;
   text-align: left;
   background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+}
+.policyInfo {
+  display: flex;
+  align-items: center;
+  flex: 1 1 25rem;
+}
+.policyInfo img {
+  margin-right: 1rem;
+}
+.policyInfo h6 {
+  color: #c91c1b;
+}
+.policyInfo span {
+  font-size: 1rem;
+  margin-left: 0.3rem;
 }
 .footerBar {
   padding: 1rem 0 2rem 0;
