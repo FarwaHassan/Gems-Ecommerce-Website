@@ -162,6 +162,56 @@ h6 {
 .btn:hover {
   background-color: #1a5c2e;
 }
+/*Latest Products Section*/
+.product {
+  text-align: center;
+  background: #fff;
+  max-width: 200px;
+  height: 200px;
+  position: relative;
+  z-index: 15;
+  margin: 0 auto;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+.productDescription {
+  position: relative;
+  background-color: bisque;
+}
+.product img {
+  width: 150px;
+  height: auto;
+}
+.info {
+  font-size: 1rem;
+  width: 75%;
+  float: left;
+}
+.info p {
+  text-transform: none;
+}
+.price {
+  font-size: 2rem;
+  width: 25%;
+  float: left;
+  position: relative;
+}
+.price::before {
+  content: "$";
+  left: -5px;
+  font-size: 1rem;
+  position: absolute;
+}
+.productSideBar {
+  display: block;
+  width: 50px;
+  height: 100%;
+  top: 0;
+  right: -50px;
+  background-color: aqua;
+  position: absolute;
+  z-index: -1;
+}
+
 /*About Us section*/
 .heading {
   text-align: center;
@@ -317,7 +367,7 @@ footer {
 /*Media Queries*/
 @media only screen and (max-width: 991px) {
   html {
-    font-size: 90%;
+    font-size: 1rem;
   }
   header {
     padding: 0.1rem 9%;
@@ -329,7 +379,7 @@ footer {
 }
 @media only screen and (max-width: 768px) {
   html {
-    font-size: 70%;
+    font-size: 0.9rem;
   }
   header .fa-bars {
     display: block;
@@ -367,6 +417,6 @@ footer {
 }
 @media only screen and (max-width: 450px) {
   html {
-    font-size: 50%;
+    font-size: 0.8rem;
   }
 }
