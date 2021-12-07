@@ -163,7 +163,94 @@ h6 {
   background-color: #1a5c2e;
 }
 /*Latest Products Section*/
-.product {
+.gridContainer {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+}
+@media only screen and (min-width: 500px) {
+  .gridContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+  /*This makes the first item bigger
+  .item-1 {
+    grid-column: 1 / span 2;
+  }
+  .item-1 h1 {
+    font-size: 30px;
+  }
+  */
+}
+
+@media only screen and (min-width: 850px) {
+  .gridContainer {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* card */
+
+.card {
+  min-height: 100%;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #444;
+  position: relative;
+  top: 0;
+  transition: all 0.1s ease-in;
+}
+
+.card:hover {
+  top: -3px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card article {
+  padding: 20px;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.card .thumb {
+  padding-bottom: 60%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.card p {
+  flex: 1; /* make p grow to fill available space*/
+  line-height: 1.4;
+}
+
+/* typography */
+h1 {
+  font-size: 20px;
+  margin: 0;
+  color: #333;
+}
+
+.card span {
+  font-size: 12px;
+  font-weight: bold;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 2em 0 0 0;
+}
+
+/*/////////////////////////////////*/
+.products .productContainer {
+  display: grid;
+  background-color: khaki;
+}
+.products .product {
   text-align: center;
   background: #fff;
   max-width: 200px;
@@ -171,17 +258,17 @@ h6 {
   position: relative;
   z-index: 15;
   margin: 0 auto;
+  padding: 150px;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
-.productDescription {
+.products .productDescription {
   position: relative;
-  background-color: bisque;
 }
-.product img {
+.products .product img {
   width: 150px;
   height: auto;
 }
-.info {
+.products .info {
   font-size: 1rem;
   width: 75%;
   float: left;
@@ -197,7 +284,7 @@ h6 {
 }
 .price::before {
   content: "$";
-  left: -5px;
+  left: -7px;
   font-size: 1rem;
   position: absolute;
 }
