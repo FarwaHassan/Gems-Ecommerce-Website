@@ -162,14 +162,15 @@ h6 {
 .btn:hover {
   background-color: #1a5c2e;
 }
+
 /*Latest Products Section*/
 .gridContainer {
   max-width: 1240px;
-  margin: 0 auto;
+  margin: 50px auto;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  grid-gap: 20px;
+  grid-gap: 50px 20px;
 }
 @media only screen and (min-width: 500px) {
   .gridContainer {
@@ -184,15 +185,12 @@ h6 {
   }
   */
 }
-
 @media only screen and (min-width: 850px) {
   .gridContainer {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
-/* card */
-
+/* Product card */
 .card {
   min-height: 100%;
   background: white;
@@ -204,13 +202,13 @@ h6 {
   position: relative;
   top: 0;
   transition: all 0.1s ease-in;
+  z-index: 3;
 }
-
-.card:hover {
-  top: -3px;
-  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+.card .thumb {
+  padding-bottom: 60%;
+  background-size: cover;
+  background-position: center center;
 }
-
 .card article {
   padding: 20px;
   display: flex;
@@ -218,24 +216,15 @@ h6 {
   justify-content: space-between;
   flex-direction: column;
 }
-.card .thumb {
-  padding-bottom: 60%;
-  background-size: cover;
-  background-position: center center;
+.card h1 {
+  font-size: 1.7rem;
+  margin: 0;
+  color: #1a5c2e;
 }
-
 .card p {
   flex: 1; /* make p grow to fill available space*/
   line-height: 1.4;
 }
-
-/* typography */
-h1 {
-  font-size: 20px;
-  margin: 0;
-  color: #333;
-}
-
 .card span {
   font-size: 12px;
   font-weight: bold;
@@ -243,38 +232,6 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 2em 0 0 0;
-}
-
-/*/////////////////////////////////*/
-.products .productContainer {
-  display: grid;
-  background-color: khaki;
-}
-.products .product {
-  text-align: center;
-  background: #fff;
-  max-width: 200px;
-  height: 200px;
-  position: relative;
-  z-index: 15;
-  margin: 0 auto;
-  padding: 150px;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-}
-.products .productDescription {
-  position: relative;
-}
-.products .product img {
-  width: 150px;
-  height: auto;
-}
-.products .info {
-  font-size: 1rem;
-  width: 75%;
-  float: left;
-}
-.info p {
-  text-transform: none;
 }
 .price {
   font-size: 2rem;
@@ -289,14 +246,40 @@ h1 {
   position: absolute;
 }
 .productSideBar {
-  display: block;
-  width: 50px;
-  height: 100%;
-  top: 0;
-  right: -50px;
-  background-color: aqua;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(234, 240, 236);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   position: absolute;
-  z-index: -1;
+  z-index: 2;
+  opacity: 0;
+}
+.card:hover {
+  top: -3px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+.card:hover > .productSideBar {
+  opacity: 1;
+  transition: all 0.5s ease-out;
+  bottom: -50px;
+}
+.productSideBar button {
+  border: none;
+  width: 60px;
+  height: 50px;
+  outline: 0;
+  padding: 12px;
+  text-align: center;
+  color: #3d57a7;
+  background-color: rgb(234, 240, 236);
+  cursor: pointer;
+  font-size: 18px;
+}
+.productSideBar button:hover {
+  color: rgb(234, 240, 236);
+  background-color: #1a5c2e;
 }
 
 /*About Us section*/
